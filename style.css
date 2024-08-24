@@ -1,0 +1,325 @@
+/* Đặt lại các thuộc tính mặc định của tất cả các phần tử */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Thiết lập font chữ, màu sắc và bố cục cho toàn bộ trang */
+body {
+    font-family: 'Quicksand', sans-serif;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('1.jpg') no-repeat center center fixed;
+    background-size: cover;
+}
+
+/* Bố cục cho phần bọc toàn bộ profile card */
+.wrapper {
+    width: 100%;
+    max-width: 700px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* Cấu hình chung cho profile card */
+.profile-card {
+    width: 100%;
+    background: #ffffff;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    text-align: center;
+    padding: 20px;
+    position: relative;
+    animation: fadeIn 1s ease-out;
+    transition: all 0.3s ease;
+    min-height: 200px; /* Thay đổi chiều cao tối thiểu nếu cần */
+}
+
+.profile-card:hover {
+    background: #f9f9f9;
+    box-shadow: 0px 25px 35px rgba(0, 0, 0, 0.2);
+    transform: scale(1.02);
+}
+
+/* Animation cho hiệu ứng mờ dần và di chuyển lên */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Định dạng và hiệu ứng cho phần hình ảnh đại diện */
+.profile-card-img {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto -60px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 6px solid #ffffff;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.1);
+    animation: bounceIn 1s ease-out;
+}
+
+@keyframes bounceIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.profile-card-img a {
+    display: block; /* Đảm bảo ảnh chiếm toàn bộ không gian của liên kết */
+}
+
+.profile-card-img a img {
+    display: block;
+    width: 100%; /* Đảm bảo ảnh không vượt ra ngoài phần chứa */
+    height: auto;
+}
+
+.profile-card-img img:hover {
+    transform: scale(1.1);
+    filter: brightness(90%);
+}
+
+/* Thiết lập khoảng cách và bố cục cho phần thông tin */
+.profile-card-info {
+    margin-top: 60px;
+}
+
+/* Khoảng cách giữa các phần tử thông tin */
+.profile-card-info > * {
+    margin-bottom: 10px;
+}
+
+.profile-card-info .name,
+.profile-card-info .position,
+.profile-card-info .location {
+    animation: slideInUp 0.6s ease-out;
+}
+
+.profile-card-info .name {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.profile-card-info .position {
+    font-size: 16px;
+    color: #555;
+    margin: 8px 0;
+    animation-delay: 0.2s;
+}
+
+.profile-card-info .location {
+    font-size: 14px;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    animation-delay: 0.4s;
+}
+
+.profile-card-info div:hover {
+    color: #007bff;
+    transform: scale(1.05);
+}
+
+/* Animation di chuyển lên */
+@keyframes slideInUp {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Định dạng các phần học vấn, kỹ năng, dự án, kinh nghiệm */
+.profile-card-education,
+.profile-card-skills,
+.profile-card-projects,
+.profile-card-experience {
+    padding: 15px;
+    border-radius: 10px;
+    margin-top: 20px;
+    text-align: left;
+    animation: fadeInUp 1s ease-out;
+}
+
+.profile-card-education {
+    background: #fffde7;
+    animation-delay: 0.6s;
+}
+
+.profile-card-skills {
+    background: #e8f5e9;
+    animation-delay: 0.2s;
+}
+
+.profile-card-projects {
+    background: #e3f2fd;
+    animation-delay: 0.4s;
+}
+
+.profile-card-experience {
+    background: #fce4ec;
+    animation-delay: 0.8s;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Phần mạng xã hội */
+.profile-card-social {
+    margin-top: 20px;
+}
+
+.profile-card-social .item {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    color: #333;
+    font-size: 20px;
+    text-align: center;
+    margin: 0 10px;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* Hiệu ứng nhấp nháy cho các biểu tượng mạng xã hội */
+@keyframes blinkSocial {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.profile-card-social .item.facebook:hover {
+    background-color: #3b5998;
+    color: #ffffff;
+    animation: blinkSocial 1s infinite;
+}
+
+.profile-card-social .item.instagram:hover {
+    background-color: #c13584;
+    color: #ffffff;
+    animation: blinkSocial 1s infinite;
+}
+
+.profile-card-social .item.github:hover {
+    background-color: #333333;
+    color: #ffffff;
+    animation: blinkSocial 1s infinite;
+}
+
+/* Hiệu ứng khi nhấp chuột vào profile card */
+.click-effect {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+    width: 100px;
+    height: 100px;
+    transform: scale(0);
+    animation: ripple 0.6s linear;
+}
+
+@keyframes ripple {
+    to {
+        transform: scale(2.5);
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .profile-card {
+        padding: 15px;
+    }
+
+    .profile-card-img {
+        width: 100px;
+        height: 100px;
+        margin: 0 auto -50px;
+    }
+}
+
+/* Định dạng logo của NIIE */
+.niie-logo {
+    height: 20px; /* Điều chỉnh kích thước logo */
+    vertical-align: middle; /* Căn chỉnh logo với text */
+    margin-right: 8px; /* Khoảng cách giữa logo và text */
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.profile-card-info .name:hover {
+    animation: blink 0.5s infinite;
+    color: red;
+}
+
+.profile-card-info .location:hover {
+    animation: blink 0.5s infinite;
+    color: rgb(11, 185, 104);
+}
+
+.profile-card-info .position:hover {
+    animation: blink 0.5s infinite;
+    color: rgb(7, 62, 126);
+}
